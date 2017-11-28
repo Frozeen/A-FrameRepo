@@ -10,20 +10,14 @@
 <body>
     <a-scene>
         <a-sky src="http://spinar-dev.com/VR/BasicRoomCreator5.png" radius="30"></a-sky>
-        <a-entity position="0 0 -2" rotation="0 0 0">
-            <a-box position="-1 1.5 -3" rotation="0 0 0" color="#4CC3D9" shadow></a-box>
-            <a-sphere position="0 5 -9" radius="1.25" color="#EF2D5E" shadow>
-                <a-ring position="1 0.5 0" radius="1" color="#EF2D5E" shadow></a-ring>
-                <a-ring position="-1 0.5 0" radius="1" color="#EF2D5E" shadow></a-ring>
-            </a-sphere>
-            <a-cylinder position="0.5 0.75 -2.5" rotation="90 -45 0" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-            <a-torus-knot position="-3.4 2.4 -4" color="#B84A39" arc="180" p="2" q="7" radius="0.5" radius-tubular="0.1"></a-torus-knot>
-            <a-dodecahedron position="3.4 2.4 -4" color="#FF926B" radius="1"></a-dodecahedron>
-            <a-text position="0 2.332 -3.964" align="center" color="#000000" value="Hello, World!"></a-text>
-            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-            <a-sky color="#ECECEC"></a-sky>
-            <!--<img src="ftp://username:password@my_ftp_ip_address/Images/imagename.jpg"/>-->
-        </a-entity>
+
+        <a-box src="https://images-na.ssl-images-amazon.com/images/I/51bfak%2BTuCL._SX355_.jpg" position="-2 0.5 -4"></a-box>
+        <a-sphere src="https://ucarecdn.com/b00b83a2-5165-4cf9-95b6-de1377d8c7a5/" radius="0.5" position="0 0.5 -3"></a-sphere>
+        <a-cone src="https://ucarecdn.com/279a2e63-3e90-4a04-85f4-04a240304e4d/" height="2" radius-top="0.1" position="0 1 -6"></a-cone>
+        <a-box src="https://ucarecdn.com/c6f86365-38c8-45ba-9788-41384d417a96/" position="2 0.5 -4"></a-box>
+
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="1" position="2 4 4"></a-light>
     </a-scene>
 </body>
 
