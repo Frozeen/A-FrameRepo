@@ -2,22 +2,23 @@
 <html>
 
 <head>
-    <title>Hello, WebVR! - A-Frame</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <title>ECS - A-Frame School</title>
+    <meta name="description" content="ECS - A-Frame School">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 </head>
 
 <body>
     <a-scene>
-        <a-sky src="http://spinar-dev.com/VR/BasicRoomCreator5.png" radius="30"></a-sky>
-
-        <a-box src="https://images-na.ssl-images-amazon.com/images/I/51bfak%2BTuCL._SX355_.jpg" position="-2 0.5 -4"></a-box>
-        <a-sphere src="https://ucarecdn.com/b00b83a2-5165-4cf9-95b6-de1377d8c7a5/" radius="0.5" position="0 0.5 -3"></a-sphere>
-        <a-cone src="https://ucarecdn.com/279a2e63-3e90-4a04-85f4-04a240304e4d/" height="2" radius-top="0.1" position="0 1 -6"></a-cone>
-        <a-box src="https://ucarecdn.com/c6f86365-38c8-45ba-9788-41384d417a96/" position="2 0.5 -4"></a-box>
-
-        <a-light type="ambient" color="#445451"></a-light>
-        <a-light type="point" intensity="1" position="2 4 4"></a-light>
+        <!--<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>-->
+        <a-entity id="box" position="-1 0.5 -3" rotation="0 45 0" geometry="primitive:box" material="color:#059000"></a-entity>
+        <!--<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>-->
+        <a-entity id="sphere" position="0 1.25 -5" geometry="primitive:sphere; radius:1.25" material="color:#1c00d2"></a-entity>
+        <!--<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>-->
+        <a-entity id="cylinder" position="1 0.75 -3" geometry="primitive:cylinder; radius:0.5; height:1.5" material="color:#a10082"></a-entity>
+        <!--<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
+        <a-entity id="plane" position="0 0 -4" rotation="-90 0 0" geometry="primitive:plane; height:4; width:4" material="side: double; color:#00c8d8"></a-entity>
+        <!--<a-sky color="#ECECEC"></a-sky>-->
+        <a-entity id="sky" position="0 0 -3" geometry="primitive:sphere; radius:3000" material="color:#1c00d2; shader:flat"></a-entity>
     </a-scene>
 </body>
 
