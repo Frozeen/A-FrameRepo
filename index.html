@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Registry - A-Frame School</title>
-    <meta name="description" content="Registry - A-Frame School">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-animation-component@^3.2.0/dist/aframe-animation-component.min.js"></script>
+    <title>JavaScript - A-Frame School</title>
+    <meta name="description" content="JavaScript - A-Frame School">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('school-playground', {
+        /**
+         * Code within this function will be called when everything in <a-scene> is ready and loaded.
+         */
+        init: function () {
+          // Add code here!
+          console.log('Welcome, class!');
+
+        }
+      });
+    </script>
   </head>
   <body>
-    <a-scene>
-      <a-assets>
-        <img id="groundTexture" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png">
-      </a-assets>
-
-      <a-entity id="Particles" particle-system="preset:default" position="0 1.25 -5"></a-entity>
-      <a-entity id="Particles" particle-system="preset:snow; size:3"></a-entity>
-
-      <a-entity id="box" geometry="primitive: box; width: 1; depth: 1; height: 1" position="-1 0.5 -3" material="color: #4CC3D9"></a-entity>
-      <a-entity id="sphere" animation="property:scale; loop:true; to:1.1 1.1 1.1; dur:100" geometry="primitive: sphere; radius: 1.25" material="color: #EF2D5E" position="0 1.25 -5"></a-entity>
-      <a-entity id="cylinder" geometry="primitive: cylinder; radius: 0.5; height: 1.5" position="1 0.75 -3" material="color: #FFC65D"></a-entity>
-
-      <a-entity id="plane" geometry="primitive: plane; width: 10000; height: 10000" material="color: #333; src: #groundTexture; repeat: 10000 10000; transparent: true; metalness: 0.6; roughness: 0.4" rotation="-90 0 0"></a-entity>
-      <a-entity id="sky" geometry="primitive: sphere; radius: 100" material="color: #666; shader: flat; side: back"></a-entity>
-      <a-entity light="type: ambient; color: #444"></a-entity>
-      <a-entity light="type: directional; color: #AAA" position="-1 2 0"></a-entity>
+    <a-scene school-playground>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
