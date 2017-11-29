@@ -15,13 +15,36 @@
               console.log('I am ready!');
             }
           });
-          var entityEl = document.createElement('a-box');
-          entityEl.setAttribute('do-something-once-loaded', '');
+          var entityEl = document.createElement('a-entity');
+          entityEl.setAttribute
+          (
+            'geometry',
+            {
+                primitive: 'box',
+                height: 3,
+                width: 1
+            }
+          );
+          entityEl.setAttribute
+          (
+            'position',
+            {
+              x: -1,
+              y: 0.5,
+              z: -3
+            }
+          );
+          entityEl.setAttribute
+          (
+            'rotation',
+            {
+              x: 0,
+              y: 45,
+              z: 0
+            }
+          );
           sceneEl.appendChild(entityEl);
-          var element = sceneEl.querySelectorAll('.queso');
-          for (var i = 0; i < element.length; i++) {
-              element[i].parentNode.removeChild(element[i]);
-          }
+          entityEl.parentNode.removeChild(sceneEl.querySelector('a-box'));
         }
       });
     </script>
