@@ -5,51 +5,40 @@
     <meta name="description" content="JavaScript - A-Frame School">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script>
-      AFRAME.registerComponent('school-playground',
-      {
+      AFRAME.registerComponent('school-playground', {
+        /**
+         * Code within this function will be called when everything in <a-scene> is ready and loaded.
+         */
         init: function () {
-          var sceneEl = document.querySelector('a-scene');
-          AFRAME.registerComponent('do-something-once-loaded', {
-            init: function () {
-              // This will be called after the entity has properly attached and loaded.
-              console.log('I am ready!');
-            }
-          });
-          var entityEl = document.createElement('a-entity');
-          entityEl.setAttribute
-          (
-            'geometry',
+          // Add code here!
+          var scene = document.querySelector('a-scene');
+          AFRAME.registerComponent('is-this-component-available',
             {
-                primitive: 'box',
-                height: 3,
-                width: 1
+              init: function ()
+              {
+                console.log('I am alive!');
+              }
             }
           );
-          entityEl.setAttribute('position', {x: -1, y: 0.5, z: -3});
-          entityEl.setAttribute('rotation', {x: 0,  y: 45,  z: 0});
-          sceneEl.appendChild(entityEl);
-          entityEl.parentNode.removeChild(sceneEl.querySelector('a-box'));
-          entityEl.setAttribute('geometry', 'height', '1')
-          entityEl.setAttribute('material', 'color', 'blue');
-          //Multi property component update
-          //entityEl.setAttribute('light', {color: '#ACC', intensity: 0.75});
-          //Replacing multi propery component characteristics
-          entityEl.setAttribute('geometry', {primitive: 'torusKnot', p: 1, q: 3, radius: 0.1, radiusTubular: 0.05}, true);
-          //Removing a component :D
-          var cameraEl = document.querySelector('[camera]');
-          cameraEl.removeAttribute('wasd-controls');
+          var boxComponent = scene.querySelector('a-box');
+          var cylinderComponent = scene.querySelector('a-cylinder');
+          var sphereComponent = scene.querySelector('a-sphere');
+          boxComponent.setAttribute('is-this-component-available', '');
+          cylinderComponent.setAttribute('is-this-component-available', '');
+          sphereComponent.setAttribute('is-this-component-available', '');
+          boxComponent.setAttribute('position', {x: 3, y: 0.5, z: -3});
+          cylinderComponent.setAttribute('geometry', 'height', '3');
+          sphereComponent.setAttribute('material', 'metalness', '0.5');
+
         }
       });
     </script>
   </head>
   <body>
     <a-scene school-playground>
-      <a-entity position="0 0 8">
-        <a-camera></a-camera>
-      </a-entity>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere class="queso" position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder class="queso" position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
