@@ -11,36 +11,30 @@
          */
         init: function () {
           // Add code here!
-          var scene = document.querySelector('a-scene');
-          AFRAME.registerComponent('is-this-component-available',
+          var sceneEl = document.querySelector('a-scene');
+          AFRAME.registerComponent('the_component_exists',
             {
               init: function ()
               {
-                console.log('I am alive!');
+                  console.log("I am here!");
               }
             }
           );
-          var boxComponent = scene.querySelector('a-box');
-          var cylinderComponent = scene.querySelector('a-cylinder');
-          var sphereComponent = scene.querySelector('a-sphere');
-          boxComponent.setAttribute('is-this-component-available', '');
-          cylinderComponent.setAttribute('is-this-component-available', '');
-          sphereComponent.setAttribute('is-this-component-available', '');
-          boxComponent.setAttribute('position', {x: 3, y: 0.5, z: -3});
-          cylinderComponent.setAttribute('geometry', 'height', '3');
-          sphereComponent.setAttribute('material', 'metalness', '0.5');
-
+          for(i = 0; i < 50; i++)
+          {
+            var cubeEl = document.createElement('a-entity');
+            cubeEl.setAttribute('the_component_exists', '');
+            sceneEl.appendChild(cubeEl);
+            cubeEl.setAttribute('geometry', {primitive: 'box', width: 1, height: 1});
+            cubeEl.setAttribute('position', {x: Math.random() * 20 - 10, y: Math.random() * 20 - 10, z: Math.random() * 20 - 10});
+            cubeEl.setAttribute('scale', {x: Math.random() / 2, y: Math.random() / 2, z: Math.random() / 2});
+          }
         }
       });
     </script>
   </head>
   <body>
     <a-scene school-playground>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
