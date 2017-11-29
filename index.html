@@ -25,26 +25,16 @@
                 width: 1
             }
           );
-          entityEl.setAttribute
-          (
-            'position',
-            {
-              x: -1,
-              y: 0.5,
-              z: -3
-            }
-          );
-          entityEl.setAttribute
-          (
-            'rotation',
-            {
-              x: 0,
-              y: 45,
-              z: 0
-            }
-          );
+          entityEl.setAttribute('position', {x: -1, y: 0.5, z: -3});
+          entityEl.setAttribute('rotation', {x: 0,  y: 45,  z: 0});
           sceneEl.appendChild(entityEl);
           entityEl.parentNode.removeChild(sceneEl.querySelector('a-box'));
+          entityEl.setAttribute('geometry', 'height', '1')
+          entityEl.setAttribute('material', 'color', 'blue');
+          //Multi property component update
+          //entityEl.setAttribute('light', {color: '#ACC', intensity: 0.75});
+          //Replacing multi propery component characteristics
+          entityEl.setAttribute('geometry', {primitive: 'torusKnot', p: 1, q: 3, radius: 0.1, radiusTubular: 0.05}, true);
         }
       });
     </script>
