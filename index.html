@@ -14,7 +14,7 @@
             boxEl.setAttribute('color', 'blue');
           }
           boxEl.addEventListener('foo', colorChanger);
-          //boxEl.removeEventListener('foo', colorChanger);
+          boxEl.removeEventListener('foo', colorChanger);
           boxEl.emit('foo');
         }
       });
